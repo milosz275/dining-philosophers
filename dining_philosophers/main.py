@@ -1,6 +1,6 @@
 """Main module for dining_philosophers package"""
 
-from dining_philosophers.src.feast import Feast
+from src.feast import Feast
 
 def main():
     """Executes main function"""
