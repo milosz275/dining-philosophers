@@ -1,14 +1,16 @@
 """Main module for dining_philosophers package"""
 
-from src.feast import Feast
+from src.dining_simulation import DiningSimulation
 from version import __version__ as version
 
 def main():
-    """Executes main function"""
-    app = Feast()
-    app.set_version(version)
-    app.run()
-    return
+    n = 5
+    lambdas = [0.2, 0.3, 0.4, 0.5, 0.6]
+    mi = 0.8
+    T = 100
+
+    sim = DiningSimulation(n, lambdas, mi, T)
+    sim.simulate()
 
 if __name__ == "__main__":
     main()
