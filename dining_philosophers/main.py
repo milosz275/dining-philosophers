@@ -10,6 +10,8 @@ def main():
     T = 100
 
     sim = DiningSimulation(n, lambdas, mi, T)
+    sim.name = "Dining Philosophers Simulation"
+    sim.version = version
     sim.simulate()
 
 if __name__ == "__main__":
