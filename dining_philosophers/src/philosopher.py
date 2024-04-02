@@ -1,14 +1,17 @@
 """Philosopher module"""
 
+from typing import List
+
+from .stick import Stick
 class Philosopher:
     """Philosopher class for dining philosophers problem"""
 
-    def __init__(self, idx, stick_1, stick_2) -> None:
+    def __init__(self, idx : int, stick_1 : Stick, stick_2 : Stick) -> None:
         self.idx = idx
-        self.is_eating = False
-        self.eating_log = []
-        self.asking_log = []
-        self.sticks = [stick_1,stick_2]
+        self.is_eating : bool = False
+        self.eating_log : List[bool] = []
+        self.asking_log : List[bool] = []
+        self.sticks : List[Stick] = [stick_1, stick_2]
 
     def stop_eating(self) -> None: 
         """Stop eating method for philosopher"""
