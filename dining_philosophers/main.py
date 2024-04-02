@@ -1,18 +1,14 @@
 """Main module for dining_philosophers package"""
 
-from src.dining_simulation import DiningSimulation
-from version import __version__ as version
+from .src.dining_philosophers import DiningPhilosophers
+from .version import __version__ as version
 
 def main():
-    n = 5
-    lambdas = [0.2, 0.3, 0.4, 0.5, 0.6]
-    mi = 0.8
-    T = 100
-
-    sim = DiningSimulation(n, lambdas, mi, T)
-    sim.name = "Dining Philosophers Simulation"
-    sim.version = version
-    sim.simulate()
+    """Main function for dining_philosophers package"""
+    dining_philosophers = DiningPhilosophers()
+    dining_philosophers.name = "Dining Philosophers"
+    dining_philosophers.version = version
+    dining_philosophers.run()
 
 if __name__ == "__main__":
     main()
