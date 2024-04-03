@@ -65,7 +65,7 @@ class DiningSimulation:
                 if (j > 0 and not self.philosophers[i].eating_log[j] and self.philosophers[i].eating_log[j - 1]) \
                 or (j == len(self.philosophers[i].eating_log) - 1 and self.philosophers[i].eating_log[j]):
                     drawn_x[1] = j
-                    plt.plot(drawn_x, [i + 1, i + 1], marker = 'o', color = color, label = f"Philosopher {i + 1}")
+                    plt.plot(drawn_x, [i + 1, i + 1], marker = 'o', color = color)
                 if not self.philosophers[i].eating_log[j] and self.philosophers[i].asking_log[j]:
                     plt.plot(j, i + 1, 'r^')
                 j += 1
@@ -76,5 +76,4 @@ class DiningSimulation:
         plt.xlim(right=100)
         plt.ylim(bottom=0)
         plt.ylim(top=self.n + 0.5)
-        #plt.legend()
         plt.show()
