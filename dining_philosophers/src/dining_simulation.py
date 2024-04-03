@@ -52,7 +52,7 @@ class DiningSimulation:
         plt.ylabel("Philosopher")
         plt.grid(True)
 
-        colors = ['magenta', 'cyan', 'purple', 'green', 'blue']
+        colors = ["magenta", "cyan", "purple", "green", "blue"]
         for i in range(self.n):
             color = colors[i % len(colors)]
             j = 0
@@ -65,9 +65,9 @@ class DiningSimulation:
                 if (j > 0 and not self.philosophers[i].eating_log[j] and self.philosophers[i].eating_log[j - 1]) \
                 or (j == len(self.philosophers[i].eating_log) - 1 and self.philosophers[i].eating_log[j]):
                     drawn_x[1] = j
-                    plt.plot(drawn_x, [i + 1, i + 1], marker = 'o', color = color)
+                    plt.plot(drawn_x, [i + 1, i + 1], marker = "o", color = color)
                 if not self.philosophers[i].eating_log[j] and self.philosophers[i].asking_log[j]:
-                    plt.plot(j, i + 1, 'r^')
+                    plt.plot(j, i + 1, "r^")
                 j += 1
 
         plt.gca().xaxis.set_major_locator(MultipleLocator(5))
