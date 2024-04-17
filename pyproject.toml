@@ -9,7 +9,7 @@ name = "dining-philosophers"
 version = "0.2.0"
 authors = [
   { name="mldxo", email="miloszmaculewicz@gmail.com" },
-  { name="ZaumNort", email="" },
+  { name="ZaumNort", email="nikolai.lobchuk@gmail.com" },
 ]
 description = "Dining philosophers problem simulation"
 readme = "README.md"
