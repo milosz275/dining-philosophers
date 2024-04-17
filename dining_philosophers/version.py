@@ -1,3 +1,9 @@
-"""Module containing version of the package"""
+"""Contains the version of the package"""
 
-__version__ = "1.0"
+import toml
+
+def get_version():
+    pyproject = toml.load("pyproject.toml")
+    return pyproject['project']['version']
+
+__version__ = get_version()
