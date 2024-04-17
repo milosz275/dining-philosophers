@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dining-philosophers"
+version = "0.2.0"
+authors = [
+  { name="mldxo", email="miloszmaculewicz@gmail.com" },
+  { name="ZaumNort", email="" },
+]
+description = "Dining philosophers problem simulation"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+dining-philosophers = "dining-philosophers:main"
+
+[project.urls]
+Homepage = "https://github.com/mldxo/dining-philosophers"
+Issues = "https://github.com/mldxo/dining-philosophers/issues"
+
+[tool.setuptools.packages.find]
+where = [""]
