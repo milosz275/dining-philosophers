@@ -21,7 +21,7 @@ classifiers = [
 ]
 
 [project.scripts]
-dining-philosophers = "dining-philosophers:main"
+dining-philosophers = "dining_philosophers:main"
 
 [project.urls]
 Homepage = "https://github.com/mldxo/dining-philosophers"
