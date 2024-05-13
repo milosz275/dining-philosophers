@@ -26,6 +26,7 @@ class DiningSimulation:
             stick_2 = self.sticks[(i + 1) % n]
             self.philosophers.append(Philosopher(i, stick_1, stick_2))
         self.philosophers[-1].sticks[1] = self.sticks[0]
+        print(f"Created {n} philosophers with asking probabilities {lambdas} and stopping probability {mi}")
 
     def simulate(self) -> None:
         """Simulates dining philosophers problem for T time steps"""
@@ -45,11 +46,13 @@ class DiningSimulation:
         """Plots the dining simulation using matplotlib"""
         matplotlib.use("TkAgg")
         
-        plt.figure()
-        plt.title("Dining Philosophers")
-        plt.suptitle("Nikolai Lobchuk, Miłosz Maculewicz")
-        plt.xlabel("Time")
-        plt.ylabel("Philosopher")
+        figure = plt.figure(num= "Dining Philosophers", figsize=(12, 8), dpi=120)
+        figure.canvas.manager.window.wm_geometry("+%d+%d" % (10, 10))
+
+        plt.suptitle(f"Philosohers: {self.n}, lambdas: {self.lambdas}, mi: {self.mi}, T: {self.T}")
+        plt.title("authors: Nikolai Lobchuk, Miłosz Maculewicz")
+        plt.xlabel("Time [T]")
+        plt.ylabel("Philosopher [n + 1]")
         plt.grid(True)
 
         colors = ["magenta", "cyan", "purple", "green", "blue"]
@@ -76,4 +79,6 @@ class DiningSimulation:
         plt.xlim(right=100)
         plt.ylim(bottom=0)
         plt.ylim(top=self.n + 0.5)
-        plt.show()
+        plt.draw()
+        plt.waitforbuttonpress(0)
+        plt.close()

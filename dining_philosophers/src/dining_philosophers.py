@@ -1,5 +1,7 @@
 """Main module for the dining philosophers problem"""
 
+import random
+
 from .dining_simulation import DiningSimulation
 
 class DiningPhilosophers:
@@ -44,12 +46,104 @@ class DiningPhilosophers:
             del self.__dining_simulation
         self.__dining_simulation = dining_simulation
 
-    def run(self) -> None:
-        """Runs the dining philosophers problem simulation"""
+    def run_deterministic(self, n = 5, lambdas = [0.2, 0.3, 0.4, 0.5, 0.6], mi = 0.8, T = 100) -> None:
+        """Runs the dining philosophers problem simulation with deterministic parameters"""
         print(f"Running {self.name} {self.version}")
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+    def run_random(self) -> None:
+        """Runs the dining philosophers problem simulation with random parameters"""
+        print(f"Running {self.name} {self.version}")
+        n = 5 # philosphers
+        lambdas = [random.random() for _ in range(n)]
+        mi = random.random()
+        T = 100 # time steps
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+    def run_showcase(self) -> None:
+        """Runs the dining philosophers problem simulation multiple times showcasing the problem"""
+        print(f"Running {self.name} {self.version}")
+        n = 5 # philosphers
+        lambdas = [0.4, 0.4, 0.4, 0.4, 0.4] # asking probabilities
+        mi = 0.1 # stopping probability
+        T = 100 # time steps
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+        
+        n = 5
+        lambdas = [0.2, 0.2, 0.2, 0.2, 0.2]
+        mi = 0.2
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+        n = 5
+        lambdas = [0.1, 0.1, 0.1, 0.1, 0.1]
+        mi = 0.1
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+        n = 5
+        lambdas = [0.1, 0.2, 0.3, 0.4, 0.5]
+        mi = 0.5
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+        n = 5
+        lambdas = [0.5, 0.4, 0.3, 0.2, 0.1]
+        mi = 0.9
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
         n = 5
         lambdas = [0.2, 0.3, 0.4, 0.5, 0.6]
         mi = 0.8
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+        n = 5
+        lambdas = [0.2, 0.3, 0.4, 0.5, 0.6]
+        mi = 0.1
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+        
+
+        n = 5
+        lambdas = [0.9, 0.1, 0.1, 0.1, 0.1]
+        mi = 0.1
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+
+        n = 5
+        lambdas = [0.9, 0.1, 0.9, 0.1, 0.1]
+        mi = 0.1
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+        
+        n = 5
+        lambdas = [0.9, 0.1, 0.9, 0.1, 0.1]
+        mi = 0.5
         T = 100
         self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
         self.dining_simulation.simulate()
