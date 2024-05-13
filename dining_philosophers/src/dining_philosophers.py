@@ -122,3 +122,29 @@ class DiningPhilosophers:
         self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
         self.dining_simulation.simulate()
         self.dining_simulation.plot()
+        
+
+        n = 5
+        lambdas = [0.9, 0.1, 0.1, 0.1, 0.1]
+        mi = 0.1
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+
+
+        n = 5
+        lambdas = [0.9, 0.1, 0.9, 0.1, 0.1]
+        mi = 0.1
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
+        
+        n = 5
+        lambdas = [0.9, 0.1, 0.9, 0.1, 0.1]
+        mi = 0.5
+        T = 100
+        self.dining_simulation = DiningSimulation(n, lambdas, mi, T)
+        self.dining_simulation.simulate()
+        self.dining_simulation.plot()
