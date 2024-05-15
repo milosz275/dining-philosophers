@@ -41,7 +41,11 @@ class DiningSimulation:
                     if not self.philosophers[i].sticks[0].is_taken and not self.philosophers[i].sticks[1].is_taken:
                         self.philosophers[i].start_eating()
                 self.philosophers[i].update_eating_log()
-                
+
+    def close_figure(self, event : matplotlib.backend_bases.KeyEvent):
+        if event.key == "escape":
+            plt.close(event.canvas.figure)
+
     def plot(self) -> None:
         """Plots the dining simulation using matplotlib"""
         matplotlib.use("TkAgg")
@@ -79,6 +83,5 @@ class DiningSimulation:
         plt.xlim(right=100)
         plt.ylim(bottom=0)
         plt.ylim(top=self.n + 0.5)
-        plt.draw()
-        plt.waitforbuttonpress(0)
-        plt.close()
+        plt.gcf().canvas.mpl_connect("key_press_event", self.close_figure)
+        plt.show()
