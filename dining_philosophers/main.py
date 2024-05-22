@@ -1,5 +1,6 @@
 """Main module for dining_philosophers package"""
 
+import sys
 import signal
 
 from .src.dining_philosophers import DiningPhilosophers
@@ -10,13 +11,12 @@ def signal_handler(sig, frame) -> None:
     try:
         signal.default_int_handler(sig, frame)
     except KeyboardInterrupt:
-        import sys
+        
         sys.exit(1)
 signal.signal(signal.SIGINT, signal_handler)
 
 def main():
     """Main function for dining_philosophers package"""
-    import sys
     args = sys.argv[1:]
     dining_philosophers = DiningPhilosophers()
     dining_philosophers.name = "Dining Philosophers"
